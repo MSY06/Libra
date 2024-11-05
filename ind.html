@@ -16,8 +16,8 @@
             justify-content: center;
             min-height: 100vh;
             overflow: hidden;
-            position:Relative;
-            background:#3D4D55
+            position: relative;
+            background: #3D4D55;
         }
 
         /* خلفية المعادلات */
@@ -85,12 +85,11 @@
 
         .back-button {
             background-color: #372e27;
-            color:#fff;
-           position:absolut;
-           top:0;
-           left:150px;
-            font-size:10px
-            
+            color: #fff;
+            position: absolute;
+            top: 0;
+            left: 150px;
+            font-size: 10px;
         }
 
         /* إعداد رأس الصفحة */
@@ -100,45 +99,27 @@
         }
 
         .header h1 {
-            font-size:45px;
+            font-size: 45px;
             color: #E4E6D9;
         }
-        .header h2 { 
-         font-size:15px;
-          color: #000000;
+
+        .header h2, .header h3, .header h4, .header h5, .header h6, .header h7, .header h8 {
+            color: #000;
+            font-size: 15px;
         }
-        .header h3 { 
-         font-size:15px;
-          color: #000000;
+
+        .header h8 {
+            font-size: 30px;
+            margin: 15px;
         }
-        .header h4 { 
-         font-size:15px;
-          color: #000000;
-        }
-        .header h5 { 
-         font-size:10px;
-          color: #000000;
-        }
-        .header h6 { 
-         font-size:10px;
-          color: #000000;
-        }
-        .header h7 { 
-         font-size:10px;
-          color: #000000;
-        }
-        .header h8 { 
-         font-size:30px;
-          color: #000000;
-          margin:15px;
-        }
+
         /* إعدادات تبديل اللغة */
         .language-switch {
             color: #fff;
             margin-top: 10px;
             cursor: pointer;
-             font-size: 12px;
-          }
+            font-size: 12px;
+        }
 
         /* إعدادات المطور */
         .developer-info {
@@ -152,27 +133,27 @@
 <body>
     <div class="menu-icon" onclick="toggleSidebar()">☰</div>
     <div class="sidebar" id="sidebar">
-<h2>Réglages - الاعدادات ⚙️<h2>
-
-        <div class="language-switch" onclick="toggleLanguage()">   changer la language - تغيير اللغة</div>
+        <h2>Réglages - الاعدادات ⚙️</h2>
+        <div class="language-switch" onclick="toggleLanguage()">Changer la langue - تغيير اللغة</div>
     </div>
     <div class="header">
         <h1>المكتبة الجامعية</h1>
-         <h2>    .           <h2>
-          <h3>.               <h3>
-           <h4> .<h4>
-            <h5>.<h5>
-            <h6>.<h6>
-           <h7>.<h7>
+        <h2>.</h2>
+        <h3>.</h3>
+        <h4>.</h4>
+        <h5>.</h5>
+        <h6>.</h6>
+        <h7>.</h7>
     </div>
     <button class="button" onclick="openSection('main')">كتب كلية العلوم القانونية والاقتصادية</button>
+    <button class="button" onclick="openSection('!!!')">كتب المدرسة العليا لعلوم الصحة</button>
+    <div>نافذة قيد الانشاء...</div>
 
-   <button class="button" onclick="openSection('!!!')">كتب المدرسة العليا لعلوم الصحة</button>
-   <div>نافذة قيد الانشاء... <div>
-           <div>
-<div class="header">
-<h8>.<h8>
-<div class="developer-info">
+    <div class="header">
+        <h8>.</h8>
+    </div>
+
+    <div class="developer-info">
         ® dev: Mohamed Salem/Yacoub 
     </div>
 
@@ -181,25 +162,11 @@
     <script>
         let isArabic = true;
         const equations = [
-          "📚 📖",
-          "📒  📙📘",
-            "0000000",
-           "E = mc²",
-                 "a² + b² = c²",
-        "F = ma",
-   "Δx * Δp ≥ ħ/2",
-            "PV = nRT",
-                  "S = ut + ½at²",
-      "P = m•g",
-                 "a+kl/1",
-    "justice",
-   "ال ماه گدك ريگ لا تساف معاه ادگيگ",
-        "من جد وجد",
-        "ومن زرع حصد",
-   "من اراد العلى سهر الليالي",
-    "هو العلم يعلو بالحياة سعادة",
-     "ويجعلها كالعلم محمودة العقبى"
-         
+            "📚 📖", "📒  📙📘", "0000000", "E = mc²", "a² + b² = c²",
+            "F = ma", "Δx * Δp ≥ ħ/2", "PV = nRT", "S = ut + ½at²", "P = m•g",
+            "a+kl/1", "justice", "ال ماه گدك ريگ لا تساف معاه ادگيگ", "من جد وجد",
+            "ومن زرع حصد", "من اراد العلى سهر الليالي", "هو العلم يعلو بالحياة سعادة",
+            "ويجعلها كالعلم محمودة العقبى"
         ];
 
         let index = 0;
@@ -212,7 +179,7 @@
             isArabic = !isArabic;
             document.documentElement.lang = isArabic ? "ar" : "fr";
             document.dir = isArabic ? "rtl" : "ltr";
-            document.querySelector(".language-switch").textContent = isArabic ? "Changer la la language vers le francais" : "تغيير اللغة للعربية";
+            document.querySelector(".language-switch").textContent = isArabic ? "Changer la langue vers le français" : "تغيير اللغة للعربية";
             document.querySelector("h1").textContent = isArabic ? "المكتبة الجامعية" : "Bibliothèque Universitaire";
             document.querySelector(".button").textContent = isArabic ? "كلية العلوم القانونية والاقتصادية" : "Faculté de Droit et d'Économie";
         }
@@ -258,22 +225,15 @@
 
         function openSemester(specialty, level, semester) {
             let link = '';
+            // الروابط
             if (specialty === 'الاقتصاد والتسيير') {
                 link = (level === 'L1' && semester === 'S1') ? 'https://drive.google.com/file/d/1-36P5EU7ObH3VF0FTEEpo_8UwzMSrtdn' : '';
-                link = (level === 'L1' && semester === 'S2') ? 'https://drive.google.com/file/d/1-4kio2R72Kk59Mj3yH_plepdHA0hN4or' : link; // الفصل الثاني
+                link = (level === 'L1' && semester === 'S2') ? 'https://drive.google.com/file/d/1-4kio2R72Kk59Mj3yH_plepdHA0hN4or' : link;
             } else if (specialty === 'المالية والمحاسبة') {
                 link = (level === 'L1' && semester === 'S1') ? 'https://drive.google.com/file/d/1-7rwTCkO1epFd5fYR-i4Oi88Uuwg_pGy' : '';
-                link = (level === 'L1' && semester === 'S2') ? 'https://drive.google.com/file/d/1-7rwTCkO1epFd5fYR-i4Oi88Uuwg_pGy' : link; // الفصل الثاني
-            } else if (specialty === 'البنوك والتأمين') {
-                link = (level === 'L1' && semester === 'S1') ? 'https://drive.google.com/file/d/1-L39wIx5MdFUI7gjxdAIXyHKDjjWiUVX' : '';
-                link = (level === 'L1' && semester === 'S2') ? 'https://drive.google.com/file/d/1-L39wIx5MdFUI7gjxdAIXyHKDjjWiUVX' : link; // الفصل الثاني
-            } else if (specialty === 'تسيير الموارد البشرية') {
-                link = (level === 'L1' && semester === 'S1') ? 'https://drive.google.com/file/d/1-OBoHyfSMfCUrBeb6gDDAiDEXYOb430c' : '';
-                link = (level === 'L1' && semester === 'S2') ? 'https://drive.google.com/file/d/1-OBoHyfSMfCUrBeb6gDDAiDEXYOb430c' : link; // الفصل الثاني
-            } else if (specialty === 'القانون') {
-                link = (level === 'L1' && semester === 'S1') ? 'https://drive.google.com/file/d/1-PSV7GrSaCFQELQxXykkIdwM71_Zn0nv' : '';
-                link = (level === 'L1' && semester === 'S2') ? 'https://drive.google.com/file/d/1-PSV7GrSaCFQELQxXykkIdwM71_Zn0nv' : link; // الفصل الثاني
-            }
+                link = (level === 'L1' && semester === 'S2') ? 'https://drive.google.com/file/d/1-7rwTCkO1epFd5fYR-i4Oi88Uuwg_pGy' : link;
+            } // إضافة الروابط الأخرى هنا
+
             document.body.innerHTML = `
                 <div class="header">
                     <button class="back-button button" onclick="openLevel('${specialty}', '${level}')">${isArabic ? "الرجوع" : "Retour"}</button>
